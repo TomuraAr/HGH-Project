@@ -1,0 +1,22 @@
+// src/watchupClient.js
+export const reportError = async (error) => {
+  const API_KEY = import.meta.env.VITE_WATCHUP_API_KEY;
+  const WATCHUP_ENDPOINT = 'https://api.watchup.site/v1/events'; // Ensure this matches your dashboard URL
+
+  try {
+    await fetch(WATCHUP_ENDPOINT, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'Authorization': `Bearer ${API_KEY}`
+      },
+      body: JSON.stringify({
+        message: error.message || "Unknown error",
+        stack: error.stack || "No stack trace available",
+        timestamp: new Date().toISOString()
+      })
+    });
+  } catch (e) {
+    console.error("WatchUp reporting failed:", e);
+  }
+};
