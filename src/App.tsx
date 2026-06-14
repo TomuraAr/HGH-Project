@@ -142,7 +142,7 @@ export default function App() {
                   type="button"
                   className={`p-4 rounded-xl border text-left flex flex-col justify-between transition-all outline-none text-xs group cursor-pointer ${
                     isActive
-                      ? 'bg-blue-600/10 border-blue-500/40 text-slate-100 shadow-[0_0_15px_rgba(37,99,235,0.15)] animate-pulse'
+                      ? 'bg-blue-600/10 border-blue-500/60 text-slate-100 shadow-[0_0_15px_rgba(37,99,235,0.15)]'
                       : 'bg-black/40 border-white/5 text-slate-400 hover:border-white/15 hover:text-slate-200'
                   }`}
                 >

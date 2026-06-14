@@ -177,9 +177,15 @@ export default function WellVisualizer({ inputs }: WellVisualizerProps) {
         </svg>
 
         {/* Dynamic Watermark label */}
-        <div className="absolute bottom-3 left-3 flex flex-col">
-          <span className="text-[9px] font-mono font-bold text-slate-500 uppercase tracking-widest leading-none">Sub-surface Wellbore</span>
-          <span className="text-[11px] font-display font-semibold text-slate-400 capitalize">{inputs.wellType} Coaxial configuration</span>
+        <div className="absolute top-3 left-3 flex flex-col bg-[#020408]/80 p-2 rounded-lg border border-white/5 backdrop-blur-sm z-20">
+          <span className="text-[8px] font-mono font-bold text-slate-400 uppercase tracking-widest leading-none mb-0.5">Hydraulic Loop Setup</span>
+          <span className="text-[10px] font-display font-semibold text-white capitalize leading-none">
+            {inputs.wellType === 'coaxial' 
+              ? 'Coaxial Annular' 
+              : inputs.wellType === 'u-tube' 
+                ? 'U-Tube Closed Loop' 
+                : 'Doublet Open Wellbore'}
+          </span>
         </div>
       </div>
 
