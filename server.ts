@@ -26,7 +26,7 @@ async function startServer() {
         nanofluidConcentration = '0.5',
         troughEfficiency = '78',
         operationalDays = '330'
-      } = req.body;
+      } = req.body || {};
 
       // Convert inputs to numbers safely
       const depthNum = parseFloat(depth) || 0;
